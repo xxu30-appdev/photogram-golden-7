@@ -321,7 +321,7 @@ If the former, simply add whatever HTML to the view template you think is approp
 If you instead just want to send the user back to the index page immediately, try the following in the action instead of `render`:
 
 ```ruby
-redirect_to("/photos")
+redirect_to("http://[YOUR PREVIEW URL]/photos")
 ```
 
 or just
