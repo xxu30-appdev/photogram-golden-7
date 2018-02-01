@@ -1,16 +1,16 @@
 require "rails_helper"
 
-feature "Photo details page" do
+describe "/photos/[PHOTO ID]" do
   it "has a functional RCAV", points: 1 do
     photo = create(:photo)
 
     visit "/photos/#{photo.id}"
 
-    expect(page)
+    expect(page.status_code).to be(200)
   end
 end
 
-feature "Photo details page" do
+describe "/photos/[PHOTO ID]" do
   it "has a p tag for the caption", points: 1 do
     photo = create(:photo)
 
@@ -20,7 +20,7 @@ feature "Photo details page" do
   end
 end
 
-feature "Photo details page" do
+describe "/photos/[PHOTO ID]" do
   it "has an img tag for the image", points: 1 do
     photo = create(:photo)
 
@@ -30,7 +30,7 @@ feature "Photo details page" do
   end
 end
 
-feature "Photo details page" do
+describe "/photos/[PHOTO ID]" do
   it "displays the correct caption", points: 3 do
     photo = create(:photo)
 
@@ -40,7 +40,7 @@ feature "Photo details page" do
   end
 end
 
-feature "Photo details page" do
+describe "/photos/[PHOTO ID]" do
   it "displays the correct image", points: 3 do
     photo = create(:photo)
 
@@ -50,15 +50,15 @@ feature "Photo details page" do
   end
 end
 
-feature "Index page" do
+describe "/photos" do
   it "has a functional RCAV", points: 1 do
     visit "/photos"
 
-    expect(page)
+    expect(page.status_code).to be(200)
   end
 end
 
-feature "Index page" do
+describe "/photos" do
   it "displays multiple photos", points: 1 do
     create_list(:photo, 2)
 
@@ -68,7 +68,7 @@ feature "Index page" do
   end
 end
 
-feature "Index page" do
+describe "/photos" do
   it "display multiple links to details pages", points: 1 do
     create_list(:photo, 2)
 
@@ -78,8 +78,8 @@ feature "Index page" do
   end
 end
 
-feature "Index page" do
-  it "display every existing photo", points: 5 do
+describe "/photos" do
+  it "displays actual existing photos", points: 5 do
     photos = create_list(:photo, 5)
 
     visit "/photos"
@@ -90,7 +90,7 @@ feature "Index page" do
   end
 end
 
-feature "Index page" do
+describe "/photos" do
   it "displays a link to the details page for every existing photo", points: 5 do
     photos = create_list(:photo, 5)
 
@@ -102,7 +102,7 @@ feature "Index page" do
   end
 end
 
-feature "Home page" do
+describe "Root URL" do
   it "is the photos index page", points: 3, hint: h("copy_must_match") do
     visit "/"
 
@@ -110,15 +110,15 @@ feature "Home page" do
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "has a functional RCAV", points: 1 do
     visit "/photos/new"
 
-    expect(page)
+    expect(page.status_code).to be(200)
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "has a form", points: 1 do
     visit "/photos/new"
 
@@ -126,7 +126,7 @@ feature "New photo form" do
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "has a label for 'Caption'", points: 1, hint: h("copy_must_match label_for_input") do
     visit "/photos/new"
 
@@ -134,7 +134,7 @@ feature "New photo form" do
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "has a label for 'Image URL'", points: 1, hint: h("copy_must_match label_for_input") do
     visit "/photos/new"
 
@@ -142,7 +142,7 @@ feature "New photo form" do
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "has two inputs", points: 1, hint: h("label_for_input") do
     visit "/photos/new"
 
@@ -150,14 +150,14 @@ feature "New photo form" do
   end
 end
 
-feature "New photo form" do  it "has a button to 'Create Photo'", points: 1, hint: h("copy_must_match") do
+describe "/photos/new" do  it "has a button to 'Create Photo'", points: 1, hint: h("copy_must_match") do
     visit "/photos/new"
 
     expect(page).to have_css("button", text: "Create Photo")
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "creates a photo when submitted", points: 3, hint: h("button_type") do
     initial_number_of_photos = Photo.count
 
@@ -171,7 +171,7 @@ feature "New photo form" do
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "saves the caption when submitted", points: 2, hint: h("label_for_input") do
     test_caption = "Photogram test caption, added at time #{Time.now}."
 
@@ -184,7 +184,7 @@ feature "New photo form" do
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "saves the image URL when submitted", points: 2, hint: h("label_for_input") do
     test_source = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Pluto-01_Stern_03_Pluto_Color_TXT.jpg/240px-Pluto-01_Stern_03_Pluto_Color_TXT.jpg"
 
@@ -197,7 +197,7 @@ feature "New photo form" do
   end
 end
 
-feature "New photo form" do
+describe "/photos/new" do
   it "redirects user to index when submitted", points: 2, hint: h("redirect_vs_render") do
     visit "/photos/new"
 
@@ -207,7 +207,7 @@ feature "New photo form" do
   end
 end
 
-feature "Delete link" do
+describe "/delete_photo/[PHOTO ID]" do
   it "removes a row from the table", points: 5 do
     photo = create(:photo)
 
@@ -217,7 +217,7 @@ feature "Delete link" do
   end
 end
 
-feature "Delete link" do
+describe "/delete_photo/[PHOTO ID]" do
   it "redirects user to the index page", points: 3, hint: h("redirect_vs_render") do
     photo = create(:photo)
 
@@ -227,17 +227,17 @@ feature "Delete link" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "has a functional RCAV", points: 1 do
     photo = create(:photo)
 
     visit "/photos/#{photo.id}/edit"
 
-    expect(page)
+    expect(page.status_code).to be(200)
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "has a form", points: 1 do
     photo = create(:photo)
 
@@ -247,7 +247,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "has a label for 'Caption'", points: 1, hint: h("copy_must_match label_for_input") do
     photo = create(:photo)
 
@@ -257,7 +257,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "has a label for 'Image URL'", points: 1, hint: h("copy_must_match label_for_input") do
     photo = create(:photo)
 
@@ -267,7 +267,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "has two inputs", points: 1, hint: h("label_for_input") do
     photo = create(:photo)
 
@@ -277,7 +277,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "has a button to 'Update Photo'", points: 1, hint: h("label_for_input") do
     photo = create(:photo)
 
@@ -287,7 +287,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "has caption prepopulated", points: 3, hint: h("value_attribute") do
     photo = create(:photo, caption: "Some pre-existing caption")
 
@@ -297,7 +297,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "has image source prepopulated", points: 3, hint: h("value_attribute") do
     photo = create(:photo, source: "http://some.pre-existing.image/source.jpg")
 
@@ -307,7 +307,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "updates caption when submitted", points: 5, hint: h("label_for_input button_type") do
     photo = create(:photo, caption: "Old caption")
     test_caption = "New caption, added at #{Time.now}"
@@ -322,7 +322,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "updates image source when submitted", points: 5, hint: h("label_for_input button_type") do
     photo = create(:photo, source: "http://old.image/source.jpg")
     test_source = "http://new.image/source_#{Time.now.to_i}.jpg"
@@ -337,7 +337,7 @@ feature "Edit photo form" do
   end
 end
 
-feature "Edit photo form" do
+describe "/photos/[PHOTO ID]/edit" do
   it "redirects user to the show page", points: 3, hint: h("embed_vs_interpolate redirect_vs_render") do
     photo = create(:photo)
 
@@ -346,4 +346,4 @@ feature "Edit photo form" do
 
     expect(page).to have_current_path("/photos/#{photo.id}")
   end
-end 
+end

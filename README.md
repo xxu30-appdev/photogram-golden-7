@@ -8,7 +8,7 @@ The goal of this project is to understand how to allow users to generate data fo
  - a Ruby class to represent it (called a "model")
  - the complete set of RCAVs that are required for users to create, read, update, and delete rows in the table through forms and links in their browsers.
 
-Web applications are not much more than a collection of related resources that users can CRUD, so understanding how each of these operations works on one table is essential. **CRUD resources are the fundamental building blocks that the web is built out of.** (The _R_ in URL stands for "Resource"; **U**niform **R**esource **L**ocator.)
+Web applications are not much more than a collection of related resources that users can CRUD, so understanding how each of these operations works on one table is essential. **CRUD resources are the fundamental building blocks of the web.** (The _R_ in URL stands for "Resource"; **U**niform **R**esource **L**ocator.)
 
 To start with, we'll keep it simple and manage just one resource: photos. Our goal is to build an app that lets users submit URLs of photos and add captions for them, like this:
 
