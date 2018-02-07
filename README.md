@@ -106,16 +106,12 @@ Now that we've identified the entire interface of the application, we can get st
 
 ## Setup
 
- 1. Ensure that you've forked this repo to your own GitHub account.
- 1. Set up [a Cloud9 workspace as usual](https://guides.firstdraft.com/getting-started-with-cloud-9.html) based on this repo.
+ 1. Download (`git clone ...`) the project to your workspace.
  1. `bin/setup`
- 1. Run Project
- 1. Navigate to the live app in Chrome.
- 1. At some point later when you're asked to run `bin/whitelist ...`, do so. Then, add this line to the bottom of the file that appears in the root of the folder called `whitelist.yml`, if you don't already see it:
-
-    ```
-    - 10.240.0.0/16
-    ```
+ 1. `bin/server`
+ 1. Preview running application
+ 1. Navigate to the homepage — note that this is a brand new, blank Rails app.
+ 1. At some point later you will run into an error message and it will ask you to run `bin/whitelist ...` at a Terminal prompt. Open a new Terminal prompt, `cd` back in to `photogram-golden-seven`, and copy-paste the command. This will give you much more helpful error messages.
 
 ## Generate the database table
 
