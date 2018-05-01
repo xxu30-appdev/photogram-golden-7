@@ -106,16 +106,16 @@ Now that we've identified the entire interface of the application, we can get st
 
 ## Setup
 
- 1. Download (`git clone ...`) the project to your workspace.
+ 1. [Set up the project as usual.](https://guides.firstdraft.com/getting-started-with-cloud9.html)
  1. `bin/setup`
- 1. `bin/server`
- 1. Preview running application
+ 1. Run Project.
+ 1. Preview the app.
  1. Navigate to the homepage — note that this is a brand new, blank Rails app.
- 1. At some point later you will run into an error message and it will ask you to run `bin/whitelist ...` at a Terminal prompt. Open a new Terminal prompt, `cd` back in to `photogram-golden-seven`, and copy-paste the command. This will give you much more helpful error messages.
+ 1. At some point later you will run into an error message and it will ask you to run `bin/whitelist ...` at a Terminal prompt. Open a new Terminal prompt and copy-paste the command. This will give you much more helpful error messages from there on out, with an interactive console that you can use to poke at variables and find out what's wrong.
 
 ## Generate the database table
 
-> You can skip this section, because in this project I've done it for you. But here's what you'd normally do to create a table to store data in.
+**You can skip to the "Add some data manually" section, because in this project I've already done it for you. But here's what you'd normally do to create a table to store data in.**
 
 (Your [CRUD with Ruby guide](https://guides.firstdraft.com/crud-with-ruby.html) will be handy for all CRUD-related portions of this project.)
 

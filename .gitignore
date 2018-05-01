@@ -28,6 +28,5 @@
 # Ignore dotenv files
 /.env*
 
-whitelist.yml
 examples.txt
 .grades.yml
