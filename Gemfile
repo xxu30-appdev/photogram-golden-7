@@ -32,6 +32,7 @@ group :development do
   gem "binding_of_caller"
   gem "console_ip_whitelist", github: "firstdraft/console_ip_whitelist"
   gem "draft_generators", github: "firstdraft/draft_generators"
+  gem "draft_log", github: "firstdraft/draft_log"
   gem "letter_opener"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "meta_request"
