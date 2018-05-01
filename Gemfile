@@ -17,6 +17,7 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
+  gem "better_errors"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "dev_toolbar", github: "firstdraft/dev_toolbar"
   gem "dotenv-rails"
@@ -28,7 +29,6 @@ end
 group :development do
   gem "annotate"
   gem "awesome_print"
-  gem "better_errors"
   gem "binding_of_caller"
   gem "console_ip_whitelist", github: "firstdraft/console_ip_whitelist"
   gem "draft_generators", github: "firstdraft/draft_generators"
