@@ -106,11 +106,13 @@ Now that we've identified the entire interface of the application, we can get st
 
 ## Setup
 
- 1. [Set up the project as usual.](https://guides.firstdraft.com/getting-started-with-cloud9.html)
- 1. `bin/setup`
- 1. Run Project.
- 1. Preview the app.
- 1. Navigate to the homepage — note that this is a brand new, blank Rails app.
+ 1. From [your Cloud9 repositories list](https://c9.io/account/repos), set up a workspace [as usual](https://guides.firstdraft.com/starting-on-a-project-in-cloud9).
+ 1. Set up the project: `bin/setup`
+ 1. Start the web server by clicking "Run Project".
+ 1. Navigate to your live application preview — note that this is a brand new, blank Rails app.
+ 1. As you work, remember to navigate to `/git` and **commit often as you work.**
+ 1. Make new branches freely to experiment! _Especially_ before starting on a new task.
+ 1. Run `rails grade` as often as you like to see how you are doing, but **make sure you test your app manually first to make sure it matches the target's behavior first**.
  1. At some point later you will run into an error message and it will ask you to run `bin/whitelist ...` at a Terminal prompt. Open a new Terminal prompt and copy-paste the command. This will give you much more helpful error messages from there on out, with an interactive console that you can use to poke at variables and find out what's wrong.
 
 ## Generate the database table

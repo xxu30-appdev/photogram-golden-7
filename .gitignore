@@ -30,4 +30,5 @@
 
 whitelist.yml
 examples.txt
-.grades.yml
+grades.yml
+cloud9_plugins.sh
