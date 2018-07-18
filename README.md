@@ -8,15 +8,13 @@ The goal of this project is to understand how to allow users to generate data fo
  - a Ruby class to represent it (called a "model")
  - the complete set of RCAVs that are required for users to create, read, update, and delete rows in the table through forms and links in their browsers.
 
-Web applications are not much more than a collection of related resources that users can CRUD, so understanding how each of these operations works on one table is essential. **CRUD resources are the fundamental building blocks of the web.** (The _R_ in URL stands for "Resource"; **U**niform **R**esource **L**ocator.)
+Web applications are not much more than a collection of related resources that users can CRUD, so understanding how each of these operations works on one table is essential. **CRUD resources are the fundamental building blocks of the web.** (The _R_ in URL stands for "Resource"; Uniform Resource Locator.)
 
 To start with, we'll keep it simple and manage just one resource: photos. Our goal is to build an app that lets users submit URLs of photos and add captions for them, like this:
 
 ### [This is the first, _intermediate_, target you should aim to build.](https://photogram-g7-intermediate.herokuapp.com/)
 
 Eventually, we'll add the ability to sign up, upload photos, and follow other users, and we'll wind up building Instagram. But for now, anonymous visitors will simply copy-paste the URLs of images that are already on the Internet.
-
-**We just need to put together everything we've learned about RCAV with everything we've learned about CRUDing models with Ruby.**
 
 You might as well pull up the [RCAV Flowchart](https://guides.firstdraft.com/rcav-flowchart.html) and the [CRUD with Ruby](https://guides.firstdraft.com/crud-with-ruby.html) guides in new tabs right now; you'll need them. Remember, programmers don't memorize; it's just a question of reasoning about the task at hand and then looking up the syntax to achieve it.
 
@@ -134,7 +132,7 @@ This command will generate two files:
  - A migration file that contains a Ruby script that, when executed, will create a table called "photos" with two columns in it; "caption" and "source".
  - A Ruby class called `Photo` that will represent this table so that we can interact with it easily.
 
-You would then the migration with:
+You would then run the instructions in the migration with the command:
 
 ```bash
 rails db:migrate
@@ -144,9 +142,9 @@ You would then have a database table!
 
 ### Add some data manually
 
-Now that we have a table, we can add some data to it. The easiest way is using an administrative dashboard gem that I've added to the project called ActiveAdmin. Navigate to `/admin` and sign in with `admin@example.com / password`.
+Now that we have a table, we can add some data to it. The easiest way is using a third-party admin dashboard gem that I've added to the project called ActiveAdmin. Navigate to `/admin` and sign in with `admin@example.com / password`.
 
-If you tell ActiveAdmin what your models are, it gives you a powerful and customizable admin dashboard out-of-the-box! Pretty neat. For now, click on the "Photos" link in the navbar and add a few rows. For "source", you can grab the URL of any image on the internet; try right-clicking on the Google logo in Chrome, for example, and "Copy Image Address".
+If you tell ActiveAdmin what your models are, it gives you the routes, controllers, and views needed for a powerful and customizable admin dashboard out-of-the-box! Pretty neat. For now, click on the "Photos" link in the navbar and add a few rows. For "source", you can grab the URL of any image on the internet; try right-clicking on the Google logo in Chrome, for example, and "Copy Image Address".
 
 Okay, as nice as having this admin dashboard is for CRUDing data into our table, what we really need to do is learn how to CRUD with Ruby so that we can write some RCAVs to let _our users_ do interesting things, not us.
 
