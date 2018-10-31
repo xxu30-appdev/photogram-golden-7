@@ -1,2 +1,12 @@
 <h1>All Photos</h1>
 <a href="photos/new">Add a new photo</a>
+
+
+<% @img_photos.each do |p| %>
+   <p><%= p.caption %></p><br />
+   <img src="<%= p.source %>" />
+   <a href="/photos/<%= p.id %>">Details</a>
+<% end %>
+
+
+
